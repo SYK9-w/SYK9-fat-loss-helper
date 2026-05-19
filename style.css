@@ -1,0 +1,275 @@
+:root {
+  --bg: #eef7ff;
+  --card: #ffffff;
+  --text: #18233a;
+  --muted: #667085;
+  --blue: #1677ff;
+  --blue-dark: #0f5ec7;
+  --blue-soft: #e8f2ff;
+  --line: #d6e7fb;
+  --danger: #e5484d;
+  --shadow: 0 18px 42px rgba(22, 119, 255, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #ddecff 0%, var(--bg) 45%, #f8fbff 100%);
+}
+
+.app {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.hero {
+  padding: 18px 4px 10px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.subtitle,
+.section-head p,
+.result-card p,
+label,
+.status-card span,
+.total-grid span,
+.history-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.card {
+  margin-top: 16px;
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid rgba(214, 231, 251, 0.9);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.status-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.status-card div,
+.total-grid div {
+  padding: 13px;
+  border-radius: 16px;
+  background: var(--blue-soft);
+}
+
+.status-card span,
+.total-grid span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.status-card strong,
+.total-grid strong {
+  font-size: 17px;
+}
+
+.section-head {
+  margin-bottom: 16px;
+}
+
+.section-head p {
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  font-weight: 800;
+}
+
+input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  outline: none;
+  color: var(--text);
+  background: #fbfdff;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.12);
+}
+
+.result-card {
+  padding: 16px;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1677ff, #5aa7ff);
+}
+
+.result-card span {
+  display: block;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+}
+
+.result-card strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.result-card p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.55;
+}
+
+.primary-button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  background: var(--blue);
+  box-shadow: 0 12px 24px rgba(22, 119, 255, 0.25);
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.primary-button:active,
+.delete-button:active {
+  transform: translateY(1px);
+}
+
+.total-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.history-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.empty {
+  padding: 20px 12px;
+  border-radius: 16px;
+  color: var(--muted);
+  background: #f7fbff;
+  text-align: center;
+}
+
+.history-item {
+  display: grid;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fbfdff;
+}
+
+.history-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.history-date {
+  font-weight: 900;
+}
+
+.history-deficit {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.history-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  line-height: 1.5;
+}
+
+.delete-button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 13px;
+  color: var(--danger);
+  background: #fff0f0;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (min-width: 430px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .status-card,
+  .total-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .total-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
