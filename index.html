@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYK9 减脂打卡助手</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">纯前端练习项目</p>
+      <h1>SYK9 减脂打卡助手</h1>
+      <p class="subtitle">每天记录体重、摄入和运动消耗，先稳稳向 73 kg 靠近。</p>
+    </section>
+
+    <section class="card status-card">
+      <div>
+        <span>当前目标</span>
+        <strong>73 kg</strong>
+      </div>
+      <div>
+        <span>项目阶段</span>
+        <strong>第一版</strong>
+      </div>
+      <div>
+        <span>保存方式</span>
+        <strong>localStorage</strong>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>今日打卡</h2>
+        <p>输入今天的数据，页面会自动计算热量缺口。</p>
+      </div>
+
+      <form id="checkinForm" class="form">
+        <label>
+          日期
+          <input id="dateInput" type="date" required>
+        </label>
+
+        <label>
+          今日体重 kg
+          <input id="weightInput" type="number" inputmode="decimal" min="30" max="200" step="0.1" placeholder="例如 79.0" required>
+        </label>
+
+        <label>
+          今日摄入热量 kcal
+          <input id="intakeInput" type="number" inputmode="numeric" min="0" step="1" placeholder="例如 1800" required>
+        </label>
+
+        <label>
+          今日运动消耗 kcal
+          <input id="exerciseInput" type="number" inputmode="numeric" min="0" step="1" placeholder="例如 230" required>
+        </label>
+
+        <div class="result-card">
+          <span>今日热量缺口</span>
+          <strong id="todayDeficit">0 kcal</strong>
+          <p id="todayHint">输入体重和热量后自动计算。</p>
+        </div>
+
+        <button class="primary-button" type="submit">保存今日记录</button>
+      </form>
+    </section>
+
+    <section class="card total-card">
+      <div class="section-head">
+        <h2>累计进度</h2>
+        <p>按 7700 kcal ≈ 1 kg 脂肪做粗略估算。</p>
+      </div>
+
+      <div class="total-grid">
+        <div>
+          <span>累计热量缺口</span>
+          <strong id="totalDeficit">0 kcal</strong>
+        </div>
+        <div>
+          <span>估算累计减重</span>
+          <strong id="estimatedLoss">0.00 kg</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head history-head">
+        <div>
+          <h2>历史记录</h2>
+          <p id="historyText">还没有记录，今天先打第一卡。</p>
+        </div>
+      </div>
+
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
